@@ -1,33 +1,20 @@
 import classNames from 'classnames';
 import cls from './ListCategory.module.scss';
-import {ArticleCategory, ArticleCategoryMode,} from '../ArticleCategory/ArticleCategory';
-import {ArticleCategoryType} from '../../model/types/ArticleCategory';
+import { ArticleCategory } from '../ArticleCategory/ArticleCategory';
+import { ArticleCategoryType } from '../../model/types/ArticleCategory';
 
 interface ListCategoryProps {
     className?: string;
-    showSkeleton: boolean;
     selectedItem: number | undefined;
     data: ArticleCategoryType[] | undefined;
-    selectEvent?: (ArticleCategoryType) => void;
 }
 
 export const ListCategory = (props: ListCategoryProps) => {
     const {
         data,
         className,
-        selectEvent,
-        showSkeleton,
         selectedItem,
     } = props;
-
-    const skeleton = (
-        new Array(5).fill(null).map((_, index: number) => (
-            <ArticleCategory
-                key={index}
-                mode={ArticleCategoryMode.STATIC}
-            />
-        ))
-    );
 
     const content = (
         data
@@ -37,8 +24,6 @@ export const ListCategory = (props: ListCategoryProps) => {
                 data={item}
                 key={item.id}
                 name="category"
-                clickEvent={selectEvent}
-                mode={ArticleCategoryMode.INPUT}
                 isActive={selectedItem === item.id}
             />
         ))
@@ -46,7 +31,7 @@ export const ListCategory = (props: ListCategoryProps) => {
 
     return (
         <form className={classNames(cls.nav, className)}>
-            { showSkeleton ? skeleton : content }
+            { content }
         </form>
     );
 };

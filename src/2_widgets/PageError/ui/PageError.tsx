@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { Error } from '5_shared/ui/Error/Error';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
@@ -11,7 +10,7 @@ export const PageError = (props: PageErrorProps) => {
 
     return (
         <div className={classNames(cls.PageError, className)}>
-            <Error />
+            Ошибка
         </div>
     );
 };

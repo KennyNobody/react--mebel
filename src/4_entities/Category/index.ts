@@ -4,7 +4,6 @@ export type {
 
 export {
     ArticleCategory,
-    ArticleCategoryMode,
 } from './ui/ArticleCategory/ArticleCategory';
 
 export {

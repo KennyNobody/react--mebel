@@ -1,4 +1,4 @@
-import {memo, ReactNode} from 'react';
+import { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 import cls from './ListTags.module.scss';
 

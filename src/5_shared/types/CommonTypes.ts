@@ -1,15 +1,4 @@
-import { SectionType } from '2_widgets/SectionsStack';
 import { Media } from '4_entities/Media';
-
-enum LangShownType {
-    RU = 'Ру',
-    EN = 'En',
-}
-
-enum LangEngineType {
-    RU = 'ru',
-    EN = 'en',
-}
 
 enum ContentKeyType {
     DEV = 'dev',
@@ -22,13 +11,7 @@ interface BaseResponseType {
     meta: any;
 }
 
-enum SocialNetwork {
-    FACEBOOK = 'Facebook',
-    TWITTER = 'Twitter',
-}
-
 interface MetaSocial {
-    socialNetwork: SocialNetwork;
     title: string;
     description: string;
     image?: { data: Media };
@@ -58,25 +41,14 @@ interface PageResponseType {
             data: [any],
         };
         seo: MetaPageType;
-        section: SectionType[];
     };
     meta: any;
 }
 
-// interface PageIndexResponseType extends Omit<PageResponseType, 'data'> {
-//     data: PageResponseType['data'] & {
-//         section: SectionType[];
-//     };
-// }
-
 export {
-    LangShownType,
-    LangEngineType,
     ContentKeyType,
-    SocialNetwork,
     type MetaSocial,
     type MetaPageType,
     type BaseResponseType,
     type PageResponseType,
-    // type PageIndexResponseType,
 };

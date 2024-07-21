@@ -53,7 +53,7 @@ export const routeConfig: AppRouteProps[] = [
     },
     {
         path: `${RouterPath.post_detail}:slug`,
-        element: <DetailPage mode={ContentKeyType.POST} />,
+        element: <DetailPage />,
         layoutMode: PageLayoutMode.DETAIL,
     },
     {
@@ -63,7 +63,7 @@ export const routeConfig: AppRouteProps[] = [
     },
     {
         path: `${RouterPath.dev_detail}:slug`,
-        element: <DetailPage mode={ContentKeyType.DEV} />,
+        element: <DetailPage />,
         layoutMode: PageLayoutMode.DETAIL,
     },
     {
@@ -73,7 +73,7 @@ export const routeConfig: AppRouteProps[] = [
     },
     {
         path: `${RouterPath.photo_detail}:slug`,
-        element: <DetailPage mode={ContentKeyType.PHOTO} />,
+        element: <DetailPage />,
         layoutMode: PageLayoutMode.DETAIL,
     },
     {
