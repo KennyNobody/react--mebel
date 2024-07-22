@@ -1,11 +1,12 @@
 .block {
     width: 100%;
-    padding: 0 50px;
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: 1299px;
 }
 
-@media (width <= 1299px) {
+@media (max-width: 1299px) {
     .block {
-        padding: 0 30px;
-        //background-color: blue;
+        padding: 0 15px;
     }
 }
