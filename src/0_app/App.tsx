@@ -18,10 +18,10 @@ function App() {
             >
                 <Container className={classNames()}>
                     <div className={classNames(grid.grid)}>
-                        <aside className={classNames('grid__col', 'grid__col--2')}>
+                        <aside className={classNames(grid.grid__col, grid['grid__col--2'])}>
                             <Sidebar />
                         </aside>
-                        <div className={classNames('grid__col', 'grid__col--6')}>
+                        <div className={classNames(grid.grid__col, grid['grid__col--6'])}>
                             <AppRouter />
                         </div>
                     </div>

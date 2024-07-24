@@ -21,7 +21,7 @@ export const ArticlePhoto = memo((props: ArticlePhotoProps) => {
 
     const article = useMemo(() => (
         <Link
-            to={`${RouterPath.photo_detail}${data?.id}`}
+            to={`/#/`}
             className={
                 classNames(
                     cls.article,

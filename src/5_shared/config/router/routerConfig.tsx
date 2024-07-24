@@ -1,84 +1,94 @@
 import { RouteProps } from 'react-router-dom';
 import { FrontPage } from '1_pages/FrontPage';
-import { DetailPage } from '1_pages/DetailPage';
-import { DevListPage } from '1_pages/DevListPage';
-import { PostListPage } from '1_pages/PostListPage';
 import { NotFoundPage } from '1_pages/NotFoundPage';
-import { PhotoListPage } from '1_pages/PhotoListPage';
-import { ContentKeyType } from '5_shared/types/CommonTypes';
-
-export type AppRouteProps = RouteProps & {
-    layoutMode: PageLayoutMode;
-};
-
-export enum PageLayoutMode {
-    FRONT = 'front',
-    LIST = 'list',
-    STATIC = 'static',
-    DETAIL = 'detail',
-}
+import { AddingProjectPage } from '1_pages/AddingProjectPage';
+import { OrdersListPage } from '1_pages/OrdersListPage';
+import { PortfolioPage } from '1_pages/PortfolioPage';
+import { OrdersCatalogPage } from '1_pages/OrdersCatalogPage';
+import { OrderDetail } from '1_pages/OrderDetail';
+import { SettingsPage } from '1_pages/SettingsPage';
+import { ReviewsList } from '1_pages/ReviewsList/ReviewsList';
+import { AddingReviewPage } from '1_pages/AddingReviewPage';
+import { FavoritesList } from '1_pages/FavoritesList';
+import { AddingOrderPage } from '1_pages/AddingOrderPage';
 
 export enum AppRouter {
     MAIN = 'main',
-    DEV = 'dev',
-    DEV_DETAIL = 'dev_detail',
-    POSTS = 'posts',
-    POST_DETAIL = 'post_detail',
-    PHOTO = 'photo',
-    PHOTO_DETAIL = 'photo_detail',
+    ADDING_PROJECT = 'adding_project',
+    ADDING_REVIEW = 'adding_review',
+    ADDING_ORDER = 'adding_order',
+    FAVORITES_LIST = 'favorites_list',
+    ORDERS_LIST = 'orders_list',
+    PORTFOLIO = 'portfolio',
+    ORDERS_CATALOG = 'orders_catalog',
+    ORDER_DETAIL = 'order_detail',
+    SETTINGS = 'settings',
+    REVIEWS_LIST = 'reviews_list',
     NOT_FOUND = 'not_found',
 }
 
 export const RouterPath: Record<AppRouter, string> = {
     [AppRouter.MAIN]: '/',
-    [AppRouter.POSTS]: '/posts/',
-    [AppRouter.POST_DETAIL]: '/posts/',
-    [AppRouter.DEV]: '/dev/',
-    [AppRouter.DEV_DETAIL]: '/dev/',
-    [AppRouter.PHOTO]: '/photo/',
-    [AppRouter.PHOTO_DETAIL]: '/photo/',
+    [AppRouter.ADDING_PROJECT]: '/adding_project/',
+    [AppRouter.ADDING_REVIEW]: '/adding_review',
+    [AppRouter.ADDING_ORDER]: '/adding_order',
+    [AppRouter.FAVORITES_LIST]: '/favorites-list/',
+    [AppRouter.ORDERS_LIST]: '/orders-list/',
+    [AppRouter.PORTFOLIO]: '/portfolio/',
+    [AppRouter.ORDERS_CATALOG]: '/orders-catalog/',
+    [AppRouter.ORDER_DETAIL]: '/orders-list/',
+    [AppRouter.SETTINGS]: '/settings/',
+    [AppRouter.REVIEWS_LIST]: '/reviews-list/',
     [AppRouter.NOT_FOUND]: '*',
 };
 
-export const routeConfig: AppRouteProps[] = [
+export const routeConfig: RouteProps[] = [
     {
         path: RouterPath.main,
         element: <FrontPage />,
-        layoutMode: PageLayoutMode.FRONT,
     },
     {
-        path: RouterPath.posts,
-        element: <PostListPage />,
-        layoutMode: PageLayoutMode.LIST,
+        path: RouterPath.adding_project,
+        element: <AddingProjectPage />,
     },
     {
-        path: `${RouterPath.post_detail}:slug`,
-        element: <DetailPage />,
-        layoutMode: PageLayoutMode.DETAIL,
+        path: RouterPath.adding_review,
+        element: <AddingReviewPage />,
     },
     {
-        path: RouterPath.dev,
-        element: <DevListPage />,
-        layoutMode: PageLayoutMode.LIST,
+        path: RouterPath.adding_order,
+        element: <AddingOrderPage />,
     },
     {
-        path: `${RouterPath.dev_detail}:slug`,
-        element: <DetailPage />,
-        layoutMode: PageLayoutMode.DETAIL,
+        path: RouterPath.favorites_list,
+        element: <FavoritesList />,
     },
     {
-        path: RouterPath.photo,
-        element: <PhotoListPage />,
-        layoutMode: PageLayoutMode.LIST,
+        path: RouterPath.orders_list,
+        element: <OrdersListPage />,
     },
     {
-        path: `${RouterPath.photo_detail}:slug`,
-        element: <DetailPage />,
-        layoutMode: PageLayoutMode.DETAIL,
+        path: RouterPath.portfolio,
+        element: <PortfolioPage />,
+    },
+    {
+        path: RouterPath.orders_catalog,
+        element: <OrdersCatalogPage />,
+    },
+    {
+        path: `${RouterPath.order_detail}:slug`,
+        element: <OrderDetail />,
+    },
+    {
+        path: RouterPath.settings,
+        element: <SettingsPage />,
+    },
+    {
+        path: RouterPath.reviews_list,
+        element: <ReviewsList />,
     },
     {
         path: RouterPath.not_found,
         element: <NotFoundPage />,
-        layoutMode: PageLayoutMode.STATIC,
     },
 ];

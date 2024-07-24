@@ -21,7 +21,7 @@ export const ArticleDev = (props: ArticleDevProps) => {
 
     const content = useMemo(() => (
         <Link
-            to={`${RouterPath.dev_detail}${data?.id}`}
+            to="/#/"
             className={
                 classNames(
                     cls.block,
