@@ -1,0 +1,43 @@
+.block {
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    position: relative;
+    border-radius: 24px;
+    align-items: center;
+    transition: 0.3s all;
+    justify-content: center;
+    border: 2px solid #E9EAEA;
+}
+
+.field {
+    display: none;
+    visibility: hidden;
+
+    &:checked + .circle {
+        border-color: var(--green);
+
+        .dot {
+            opacity: 1;
+        }
+    }
+}
+
+.dot {
+    opacity: 0;
+    width: 14px;
+    content: "";
+    height: 14px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    transition: 0.3s opacity;
+    background-color: var(--green);
+}

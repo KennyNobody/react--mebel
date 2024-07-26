@@ -1,0 +1,44 @@
+.block {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    gap: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.picture {
+    width: 340px;
+    height: 340px;
+    display: block;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 340px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.main {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    max-width: 200px;
+}
+
+.caption {
+    color: #C4C4C4;
+    font-size: 16px;
+    font-weight: 300;
+}

@@ -1,7 +1,8 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import App from '0_app/App';
+import 'the-new-css-reset/css/reset.css';
 import '0_app/styles/index.scss';
+import App from '0_app/App';
 import { StoreProvider } from '0_app/prodivers/StoreProvider';
 import { ErrorBoundary } from '0_app/prodivers/ErrorBoundary';
 import ThemeProvider from '0_app/prodivers/theme/ThemeProvider';

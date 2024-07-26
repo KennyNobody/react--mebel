@@ -12,8 +12,10 @@ interface UserType {
     role: UserRole;
     sex?: UserSex;
     name?: string;
-    picture?: string;
     surname?: string;
+    tel?: string;
+    email?: string;
+    picture?: string;
     aboutText?: string;
     discountCode?: number;
     socials?: SocialsType;

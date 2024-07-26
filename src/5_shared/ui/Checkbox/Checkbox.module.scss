@@ -1,0 +1,44 @@
+.block {
+    gap: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.field {
+    &:checked {
+        & + .box {
+            border-color: #31A55F;
+            background-color: var(--green);
+
+            .icon {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.box {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #F6F6F7;
+    background-color: #ffffff;
+}
+
+.icon {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    display: block;
+    transition: 0.3s opacity;
+}
+
+.text {
+    font-size: 14px;
+}

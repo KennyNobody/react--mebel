@@ -1,0 +1,16 @@
+.block {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.list {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}

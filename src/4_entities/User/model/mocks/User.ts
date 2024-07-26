@@ -4,8 +4,10 @@ const dataUser: UserType = {
     role: 'client',
     sex: 'мужской',
     name: 'Станислав',
-    picture: 'https://placehold.co/1920x1080',
     surname: 'Петров',
+    tel: '9991091234',
+    email: 'demo@mail.com',
+    picture: 'https://placehold.co/1920x1080',
     aboutText: 'Длинный рассказ о себе',
     discountCode: 123124124,
     socials: {

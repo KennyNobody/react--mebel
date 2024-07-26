@@ -1,0 +1,22 @@
+.block {
+    gap: 14px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    color: var(--green);
+    border: 2px solid var(--green);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    flex-shrink: 0;
+    fill: var(--green);
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+}

@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { UserType } from '4_entities/User';
 import IconNext from '5_shared/assets/icons/arrow-next.svg';
+import { RouterPath } from '5_shared/config/router/routerConfig';
 import cls from './HeadAside.module.scss';
-import {RouterPath} from "5_shared/config/router/routerConfig";
 
 interface HeadAsideProps {
     data: UserType;
@@ -22,7 +22,7 @@ export const HeadAside = (props: HeadAsideProps) => {
                 {
                     data?.picture
                     && (
-                        <img src={data.picture} alt={`${data.surname} ${data.name}`} />
+                        <img src={data.picture} alt={`${data?.surname} ${data?.name}`} />
                     )
                 }
             </picture>
@@ -31,7 +31,7 @@ export const HeadAside = (props: HeadAsideProps) => {
                 <p className={classNames(cls.name)}>
                     {data.surname}
                     {' '}
-                    {data.name}
+                    {data?.name}
                 </p>
             </div>
             <IconNext

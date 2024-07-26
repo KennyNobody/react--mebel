@@ -46,7 +46,8 @@
     "react-hooks/exhaustive-deps": [0],
     "no-param-reassign": [0],
     "no-restricted-syntax": [0],
-    "react/prop-types": [0]
+    "react/prop-types": [0],
+    "react/button-has-type": [0]
   },
   "globals": {
     "__IS_DEV__": true,
