@@ -5,6 +5,7 @@ import grid from '5_shared/css/grid.module.scss';
 import { Container } from '5_shared/ui/Container/Container';
 import cls from './App.module.scss';
 import { AppRouter } from './prodivers/router';
+import {Temp} from "2_widgets/Temp";
 
 function App() {
     return (
@@ -20,6 +21,9 @@ function App() {
                     <div className={classNames(grid.grid)}>
                         <aside className={classNames(grid.grid__col, grid['grid__col--2'])}>
                             <Sidebar />
+                            <br />
+                            <br />
+                            <Temp />
                         </aside>
                         <div className={classNames(grid.grid__col, grid['grid__col--6'])}>
                             <AppRouter />

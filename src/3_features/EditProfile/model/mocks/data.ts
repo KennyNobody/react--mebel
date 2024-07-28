@@ -1,4 +1,4 @@
-import { FieldGroupType } from '5_shared/ui/FieldsGroup/ui/FieldsGroup';
+import { FieldGroupType } from '5_shared/ui/FieldsGroup/FieldsGroup';
 
 interface ProfileDataType {
     items: FieldGroupType[];

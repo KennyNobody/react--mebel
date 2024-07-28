@@ -3,17 +3,21 @@ import { Title } from '5_shared/ui/Title/Title';
 import { InputTextCaption } from '5_shared/ui/InputTextCaption/InputTextCaption';
 import cls from './EditInfo.module.scss';
 import { UserType } from '4_entities/User';
+import {useSelector} from "react-redux";
+import {getUserData} from "4_entities/User/model/selectors/getUser";
 
 interface EditInfoProps {
-    data: UserType;
     className?: string;
 }
 
 export const EditInfo = (props: EditInfoProps) => {
     const {
-        data,
         className,
     } = props;
+
+    const data: UserType | undefined = useSelector(getUserData);
+
+    if (!data) return <div>Нет данных пользователя</div>;
 
     return (
         <div className={classNames(cls.block, className)}>

@@ -1,26 +1,24 @@
 import {
-    CombinedState,
-    configureStore, Reducer,
+    configureStore,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { $api } from '5_shared/api/api';
 import { rtkApi } from '5_shared/api/rtkApi';
+import { appReducer } from '0_app/model/slice/appSlice';
 import { StateSchema } from './StateSchema';
-import { createReducerManager } from './reducerManager';
+import { reducersList } from './reducersList';
 
 export function createReduxStore(
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
-    const rootReducer: ReducersMapObject<StateSchema> = {
-        ...asyncReducers,
+    const reducers: ReducersMapObject<StateSchema> = {
+        app: appReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
+        ...reducersList,
     };
 
-    const reducerManager = createReducerManager(rootReducer);
-
-    const store = configureStore({
-        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
+    return configureStore({
+        reducer: reducers,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
@@ -29,13 +27,9 @@ export function createReduxStore(
                     api: $api,
                 },
             },
-        }).concat(rtkApi.middleware),
+        })
+            .concat(rtkApi.middleware),
     });
-
-    // @ts-ignore
-    store.reducerManager = reducerManager;
-
-    return store;
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

@@ -1,32 +1,15 @@
-import {
-    Action,
-    Reducer,
-    EnhancedStore,
-    CombinedState,
-    ReducersMapObject,
-} from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { rtkApi } from '5_shared/api/rtkApi';
+import { AppSchema } from '0_app/model/types/AppSchema';
+import { UserSchema } from '4_entities/User';
 
 export interface StateSchema {
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
-    // postList?: PostListSchema;
-    // photoList?: PhotoListSchema;
-    // devList?: DevListSchema;
+    app: AppSchema;
+    user?: UserSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
-
-export interface ReducerManager {
-    getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: Action) => CombinedState<StateSchema>;
-    add: (key: StateSchemaKey, reducer: Reducer) => void;
-    remove: (key: StateSchemaKey) => void;
-}
-
-export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager;
-}
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
