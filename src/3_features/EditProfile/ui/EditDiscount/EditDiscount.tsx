@@ -28,10 +28,9 @@ export const EditDiscount = (props: EditDiscountProps) => {
 
     const handleChange = (index: number) => (event: ChangeEvent<HTMLInputElement>) => {
         const newDigits = [...digits];
-        newDigits[index] = event.target.value.slice(-1); // Take only the last entered character
+        newDigits[index] = event.target.value.slice(-1);
         setDigits(newDigits);
 
-        // Move focus to the next input if the length of the value is 1
         if (event.target.value.length === 1 && index < inputRefs.current.length - 1) {
             inputRefs.current[index + 1]?.focus();
         }
@@ -41,7 +40,7 @@ export const EditDiscount = (props: EditDiscountProps) => {
         if (event.key === 'Backspace' && digits[index] === '') {
             if (index > 0) {
                 const newDigits = [...digits];
-                newDigits[index - 1] = ''; // Clear the previous input
+                newDigits[index - 1] = '';
                 setDigits(newDigits);
                 inputRefs.current[index - 1]?.focus();
             }

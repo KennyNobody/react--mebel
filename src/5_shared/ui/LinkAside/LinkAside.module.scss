@@ -1,0 +1,59 @@
+.link {
+    gap: 12px;
+    height: 56px;
+    display: flex;
+    padding: 0 14px;
+    border-radius: 18px;
+    align-items: center;
+    transition: 0.3s opacity;
+    justify-content: space-between;
+
+    &--regular {
+        color: #1C222E;
+        background-color: #F8F8F8;
+
+        .icon {
+            fill: #1C222E;
+        }
+
+        &.active {
+            color: #ffffff;
+            background-color: var(--green);
+
+            .icon {
+                fill: #ffffff;
+            }
+        }
+    }
+
+    &--light {
+        color: #8C8C8C;
+
+        .icon {
+            fill: #8C8C8C;
+        }
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: 0.3s all;
+}
+
+.text {
+    flex-grow: 1;
+}
+
+.iconNext {
+    width: 24px;
+    height: 24px;
+    fill: #8C8C8C;
+    display: block;
+    flex-shrink: 0;
+}

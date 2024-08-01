@@ -5,7 +5,7 @@ import { AddingProjectPage } from '1_pages/AddingProjectPage';
 import { OrdersListPage } from '1_pages/OrdersListPage';
 import { PortfolioPage } from '1_pages/PortfolioPage';
 import { OrdersCatalogPage } from '1_pages/OrdersCatalogPage';
-import { OrderDetail } from '1_pages/OrderDetail';
+import { OrderDetailPage } from '1_pages/OrderDetailPage';
 import { SettingsPage } from '1_pages/SettingsPage';
 import { ReviewsList } from '1_pages/ReviewsList/ReviewsList';
 import { AddingReviewPage } from '1_pages/AddingReviewPage';
@@ -77,7 +77,7 @@ export const routeConfig: RouteProps[] = [
     },
     {
         path: `${RouterPath.order_detail}:slug`,
-        element: <OrderDetail />,
+        element: <OrderDetailPage />,
     },
     {
         path: RouterPath.settings,

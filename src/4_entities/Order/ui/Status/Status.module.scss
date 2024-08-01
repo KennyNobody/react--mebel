@@ -1,0 +1,43 @@
+.block {
+    gap: 4px;
+    height: 32px;
+    width: 140px;
+    display: flex;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+
+    &--waiting {
+
+    }
+
+    &--process {
+        color: #B18E34;
+        background-color: #F0EDA9;
+    }
+
+    &--control {
+        color: #63B85C;
+        background-color: #D0F8D2;
+    }
+
+    &--completed {
+        color: var(--green);
+        background-color: #1C222E;
+
+        .icon {
+            fill: var(--green);
+        }
+    }
+}
+
+.icon {
+    width: 12px;
+    height: 9px;
+    display: block;
+    flex-shrink: 0;
+}

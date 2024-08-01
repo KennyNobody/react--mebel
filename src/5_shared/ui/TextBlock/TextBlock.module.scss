@@ -1,0 +1,21 @@
+.block {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.content {
+    padding-left: 20px;
+
+    & > * {
+        margin-bottom: 1em;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,31 @@
+.link {
+    gap: 10px;
+    width: 180px;
+    display: flex;
+    padding: 0 10px;
+    min-height: 60px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.3s opacity;
+    border: 1px solid #87B6FD;
+    background-color: #87B6FD1A;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+.title {
+    display: block;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+

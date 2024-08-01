@@ -19,6 +19,11 @@ export {
 
 export {
     getUserData,
+    getUserRole,
     getUserError,
     getUserLoading,
 } from './model/selectors/getUser';
+
+export {
+    HeadAside,
+} from './ui/HeadAside/HeadAside';

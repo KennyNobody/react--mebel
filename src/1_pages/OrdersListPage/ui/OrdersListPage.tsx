@@ -1,4 +1,7 @@
 import classNames from 'classnames';
+import { Informer } from '3_features/Informer';
+import { OrdersList } from '3_features/OrdersList';
+import { Title } from '5_shared/ui/Title/Title';
 import cls from './OrdersListPage.module.scss';
 
 interface OrdersListPageProps {
@@ -10,7 +13,14 @@ export const OrdersListPage = (props: OrdersListPageProps) => {
 
     return (
         <div className={classNames(cls.block, className)}>
-            Страница моих заказов
+            <Title
+                text="Мои заказы"
+                className={classNames(cls.title)}
+            />
+            <OrdersList
+                className={classNames(cls.feature)}
+            />
+            <Informer />
         </div>
     );
 };

@@ -1,20 +1,21 @@
 import classNames from 'classnames';
-import {UserRole} from '4_entities/User';
+import { useSelector } from 'react-redux';
+import { getUserRole } from '4_entities/User';
+import { RouterPath } from '5_shared/config/router/routerConfig';
+import { IconKey, LinkAside } from '5_shared/ui/LinkAside/LinkAside';
+import { ButtonLink, ButtonLinkTheme } from '5_shared/ui/ButtonLink/ButtonLink';
 import cls from './NavAside.module.scss';
-import {ButtonLink, ButtonLinkTheme} from "5_shared/ui/ButtonLink/ButtonLink";
-import {RouterPath} from "5_shared/config/router/routerConfig";
-import {Link} from "react-router-dom";
 
 interface NavAsideProps {
-    role: UserRole;
     className?: string;
 }
 
 export const NavAside = (props: NavAsideProps) => {
     const {
-        role,
         className,
     } = props;
+
+    const userRole = useSelector(getUserRole);
 
     const linksUser = (
         <>
@@ -23,9 +24,24 @@ export const NavAside = (props: NavAsideProps) => {
                 theme={ButtonLinkTheme.GREEN}
                 link={RouterPath.adding_order}
             />
-            <Link to={RouterPath.orders_list}>Мои заказы</Link>
-            <Link to={RouterPath.reviews_list}>Отзывы</Link>
-            <Link to={RouterPath.favorites_list}>Избранное</Link>
+            <LinkAside
+                theme="regular"
+                caption="Мои заказы"
+                iconKey={IconKey.ORDERS}
+                linkProp={RouterPath.orders_list}
+            />
+            <LinkAside
+                theme="regular"
+                caption="Отзывы"
+                iconKey={IconKey.REVIEWS}
+                linkProp={RouterPath.reviews_list}
+            />
+            <LinkAside
+                theme="regular"
+                caption="Избранное"
+                iconKey={IconKey.FAVORITES}
+                linkProp={RouterPath.favorites_list}
+            />
         </>
     );
 
@@ -36,18 +52,43 @@ export const NavAside = (props: NavAsideProps) => {
                 theme={ButtonLinkTheme.GREEN}
                 link={RouterPath.adding_project}
             />
-            <Link to={RouterPath.portfolio}>Мое портфолио</Link>
-            <Link to={RouterPath.orders_list}>Мои заказы</Link>
-            <Link to={RouterPath.orders_catalog}>Поиск заказов</Link>
+            <LinkAside
+                theme="regular"
+                caption="Мое портфолио"
+                iconKey={IconKey.MY_LIST}
+                linkProp={RouterPath.portfolio}
+            />
+            <LinkAside
+                theme="regular"
+                caption="Мои заказы"
+                iconKey={IconKey.ORDERS}
+                linkProp={RouterPath.orders_list}
+            />
+            <LinkAside
+                theme="regular"
+                caption="Поиск заказов"
+                iconKey={IconKey.SEARCH}
+                linkProp={RouterPath.orders_catalog}
+            />
         </>
     );
 
     return (
         <nav className={classNames(cls.block, className)}>
-            { role === 'client' && linksUser }
-            { role === 'worker' && linksWorker}
-            <Link to={RouterPath.settings}>Настройки</Link>
-            <Link to="/#/">Выйти из аккаунта</Link>
+            { userRole === 'client' && linksUser }
+            { userRole === 'worker' && linksWorker}
+            <LinkAside
+                theme="regular"
+                caption="Настройки"
+                iconKey={IconKey.SETTINGS}
+                linkProp={RouterPath.settings}
+            />
+            <LinkAside
+                theme="light"
+                linkProp="/#/"
+                iconKey={IconKey.LOGOUT}
+                caption="Выйти из аккаунта"
+            />
         </nav>
     );
 };
