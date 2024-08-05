@@ -9,7 +9,7 @@ import { OrderDetailPage } from '1_pages/OrderDetailPage';
 import { SettingsPage } from '1_pages/SettingsPage';
 import { ReviewsList } from '1_pages/ReviewsList/ReviewsList';
 import { AddingReviewPage } from '1_pages/AddingReviewPage';
-import { FavoritesList } from '1_pages/FavoritesList';
+import { FavoritesPage } from '1_pages/FavoritesPage';
 import { AddingOrderPage } from '1_pages/AddingOrderPage';
 
 export enum AppRouter {
@@ -61,7 +61,7 @@ export const routeConfig: RouteProps[] = [
     },
     {
         path: RouterPath.favorites_list,
-        element: <FavoritesList />,
+        element: <FavoritesPage />,
     },
     {
         path: RouterPath.orders_list,

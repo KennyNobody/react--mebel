@@ -1,0 +1,25 @@
+.block {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: var(--green);
+}
+
+.ratingText {
+    width: 100px;
+    color: #434956;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ratingCount {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green);
+}

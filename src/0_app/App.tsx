@@ -3,9 +3,9 @@ import React, { Suspense } from 'react';
 import { Sidebar } from '2_widgets/Sidebar';
 import grid from '5_shared/css/grid.module.scss';
 import { Container } from '5_shared/ui/Container/Container';
+import { Temp } from '2_widgets/Temp';
 import cls from './App.module.scss';
 import { AppRouter } from './prodivers/router';
-import {Temp} from "2_widgets/Temp";
 
 function App() {
     return (

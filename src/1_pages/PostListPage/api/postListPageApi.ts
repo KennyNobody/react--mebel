@@ -1,10 +1,10 @@
 import { rtkApi } from '5_shared/api/rtkApi';
 import { Routes } from '5_shared/api/endpoints';
-import { PageResponseType } from '5_shared/types/CommonTypes';
+import { ResponseType } from '5_shared/types/ServerResponse';
 
 const pagePostApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
-        fetchPagePost: build.query<PageResponseType, null>({
+        fetchPagePost: build.query<ResponseType, null>({
             query: () => ({
                 url: Routes.PAGE_POST,
                 params: {

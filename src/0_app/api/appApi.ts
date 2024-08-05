@@ -1,10 +1,10 @@
 import { rtkApi } from '5_shared/api/rtkApi';
 import { Routes } from '5_shared/api/endpoints';
-import { AppResponseType } from '../types/MainResponseType';
+import { ResponseType } from '5_shared/types/ServerResponse';
 
 const mainApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
-        fetchMain: build.query<AppResponseType, null>({
+        fetchMain: build.query<ResponseType, null>({
             query: () => ({
                 url: Routes.MAIN,
                 params: {
