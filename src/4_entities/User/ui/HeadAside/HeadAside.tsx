@@ -1,8 +1,7 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { UserType } from '4_entities/User';
 import IconNext from '5_shared/assets/icons/arrow-next.svg';
-import { RouterPath } from '5_shared/config/router/routerConfig';
+import { UserType } from '../../model/types/User';
 import cls from './HeadAside.module.scss';
 
 interface HeadAsideProps {
@@ -17,7 +16,7 @@ export const HeadAside = (props: HeadAsideProps) => {
     } = props;
 
     return (
-        <Link to={RouterPath.main} className={classNames(cls.block, className)}>
+        <Link to="/" className={classNames(cls.block, className)}>
             <picture className={classNames(cls.picture)}>
                 {
                     data?.picture

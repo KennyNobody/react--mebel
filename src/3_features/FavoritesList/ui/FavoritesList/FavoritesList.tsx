@@ -3,10 +3,10 @@ import { ButtonNav } from '5_shared/ui/ButtonNav/ButtonNav';
 import { Pagination } from '5_shared/ui/Pagination/Pagination';
 import { TabsWrapper } from '5_shared/ui/TabsWrapper/TabsWrapper';
 import { ArticlePersonFavorite } from '4_entities/Person';
+import { ArticleProjectFavorite } from '4_entities/Project';
 import cls from './FavoritesList.module.scss';
 import { dataWorker } from '../../model/mocks/dataWorker';
-import {dataProjects} from "3_features/FavoritesList/model/mocks/dataProjects";
-import {ArticleProjectFavorite} from "4_entities/Project";
+import { dataProjects } from '../../model/mocks/dataProjects';
 
 interface FavoritesListProps {
     className?: string

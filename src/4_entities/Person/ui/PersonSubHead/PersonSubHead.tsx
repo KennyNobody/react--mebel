@@ -1,22 +1,24 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { PersonType } from '4_entities/Person';
+import { PersonType, PersonWorkerType } from '4_entities/Person';
+import { RatingIcons } from '5_shared/ui/RatingIcons/RatingIcons';
 import cls from './PersonSubHead.module.scss';
-import {RatingIcons} from "5_shared/ui/RatingIcons/RatingIcons";
 
 interface PersonSubHeadProps {
+    rating: number;
     className?: string;
-    data: PersonType;
+    data: PersonType | PersonWorkerType;
 }
 
 export const PersonSubHead = (props: PersonSubHeadProps) => {
     const {
         data,
+        rating,
         className,
     } = props;
 
     return (
-        <Link to={data.link} className={classNames(cls.block, className)}>
+        <article className={classNames(cls.block, className)}>
             <picture className={classNames(cls.picture)}>
                 <img src={data.picture} alt={`${data.surname} ${data.name}`} />
             </picture>
@@ -24,8 +26,8 @@ export const PersonSubHead = (props: PersonSubHeadProps) => {
                 <p className={classNames(cls.name)}>
                     {`${data.surname} ${data.name}`}
                 </p>
-                <RatingIcons rating={data.rating} />
+                <RatingIcons rating={rating} />
             </div>
-        </Link>
+        </article>
     );
 };

@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-import { OrderType } from '4_entities/Order';
-import { DateUI } from '5_shared/ui/Date/DateUI';
-import { Status } from '../Status/Status';
+import {Link} from 'react-router-dom';
+import {OrderType} from '4_entities/Order';
+import {DateMode, DateUI} from '5_shared/ui/Date/DateUI';
+import {Status} from '../Status/Status';
 import cls from './ArticleOrder.module.scss';
 
 interface ArticleOrderProps {
@@ -27,6 +27,7 @@ export const ArticleOrder = (props: ArticleOrderProps) => {
             </div>
             <div className={classNames(cls['block__column-date'])}>
                 <DateUI
+                    mode={DateMode.SHORT}
                     data={data.createDate}
                     className={classNames(cls.time)}
                 />

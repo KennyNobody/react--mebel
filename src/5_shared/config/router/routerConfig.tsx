@@ -7,12 +7,12 @@ import { PortfolioPage } from '1_pages/PortfolioPage';
 import { OrdersCatalogPage } from '1_pages/OrdersCatalogPage';
 import { OrderDetailPage } from '1_pages/OrderDetailPage';
 import { SettingsPage } from '1_pages/SettingsPage';
-import { ReviewsList } from '1_pages/ReviewsList/ReviewsList';
+import { ReviewsListPage } from '1_pages/ReviewsListPage';
 import { AddingReviewPage } from '1_pages/AddingReviewPage';
 import { FavoritesPage } from '1_pages/FavoritesPage';
 import { AddingOrderPage } from '1_pages/AddingOrderPage';
 
-export enum AppRouter {
+enum AppRouter {
     MAIN = 'main',
     ADDING_PROJECT = 'adding_project',
     ADDING_REVIEW = 'adding_review',
@@ -27,7 +27,7 @@ export enum AppRouter {
     NOT_FOUND = 'not_found',
 }
 
-export const RouterPath: Record<AppRouter, string> = {
+const RouterPath: Record<AppRouter, string> = {
     [AppRouter.MAIN]: '/',
     [AppRouter.ADDING_PROJECT]: '/adding_project/',
     [AppRouter.ADDING_REVIEW]: '/adding_review',
@@ -42,7 +42,7 @@ export const RouterPath: Record<AppRouter, string> = {
     [AppRouter.NOT_FOUND]: '*',
 };
 
-export const routeConfig: RouteProps[] = [
+const routeConfig: RouteProps[] = [
     {
         path: RouterPath.main,
         element: <FrontPage />,
@@ -85,10 +85,16 @@ export const routeConfig: RouteProps[] = [
     },
     {
         path: RouterPath.reviews_list,
-        element: <ReviewsList />,
+        element: <ReviewsListPage />,
     },
     {
         path: RouterPath.not_found,
         element: <NotFoundPage />,
     },
 ];
+
+export {
+    AppRouter,
+    RouterPath,
+    routeConfig,
+};

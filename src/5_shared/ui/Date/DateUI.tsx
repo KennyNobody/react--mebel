@@ -1,12 +1,19 @@
 import classNames from 'classnames';
 
+enum DateMode {
+    SHORT,
+    FULL,
+}
+
 interface DateProps {
     data?: string;
+    mode: DateMode;
     className?: string;
 }
 
-export const DateUI = (props: DateProps) => {
+const DateUI = (props: DateProps) => {
     const {
+        mode,
         data,
         className,
     } = props;
@@ -26,9 +33,22 @@ export const DateUI = (props: DateProps) => {
 
     const formattedDate = `${day}.${month}.${year}`;
 
+    let formattedDateTime = formattedDate;
+
+    if (mode === DateMode.FULL) {
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        formattedDateTime = `${formattedDate} ${hours}:${minutes}`;
+    }
+
     return (
         <time className={classNames(className)}>
-            { formattedDate }
+            { formattedDateTime }
         </time>
     );
+};
+
+export {
+    DateUI,
+    DateMode,
 };

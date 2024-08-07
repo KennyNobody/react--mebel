@@ -3,11 +3,15 @@ interface PersonType {
     name: string;
     surname: string;
     picture: string;
-    rating: number;
+}
+
+interface PersonWorkerType extends PersonType {
     link: string;
+    rating: number;
     online?: boolean;
 }
 
-export {
-    type PersonType,
+export type {
+    PersonType,
+    PersonWorkerType,
 };

@@ -1,14 +1,14 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { AddFavorite } from '3_features/AddFavorite';
-import { PersonType } from '4_entities/Person';
+import {PersonType, PersonWorkerType} from '4_entities/Person';
 import IconFavorite from '5_shared/assets/icons/star-half.svg';
 import cls from './ArticlePersonFavorite.module.scss';
 import {RatingString} from "5_shared/ui/RatingString/RatingString";
 
 interface ArticlePersonFavoriteProps {
     className?: string;
-    data: PersonType;
+    data: PersonWorkerType;
 }
 
 export const ArticlePersonFavorite = (props: ArticlePersonFavoriteProps) => {

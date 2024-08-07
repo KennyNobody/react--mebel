@@ -28,7 +28,10 @@ export const ArticleProjectFavorite = (props: ArticleProjectFavoriteProps) => {
                 <Link to={data.link} className={classNames(cls.title)}>
                     { data.title }
                 </Link>
-                <PersonSubHead data={data.author} />
+                <PersonSubHead
+                    data={data.author}
+                    rating={data.rating}
+                />
             </div>
             <div className={classNames(cls.controls)}>
                 <AddFavorite

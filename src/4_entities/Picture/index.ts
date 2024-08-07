@@ -5,3 +5,7 @@ export type {
 export {
     PictureOrder,
 } from './ui/PictureOrder/PictureOrder';
+
+export {
+    PictureSmallGallery,
+} from './ui/PictureSmallGallery/PictureSmallGallery';

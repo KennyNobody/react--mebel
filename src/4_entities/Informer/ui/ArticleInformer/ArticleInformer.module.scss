@@ -1,0 +1,31 @@
+.block {
+    gap: 24px;
+    display: flex;
+    min-height: 270px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EEECEC;
+    padding: 30px 50% 30px 30px;
+    background-repeat: no-repeat;
+    background-size: 480px 480px;
+    background-position: right center;
+    background-image: url("5_shared/assets/images/informer-ill.png");
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.editor {
+    font-weight: 300;
+
+    a {
+        color: var(--green);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
